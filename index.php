@@ -1,5 +1,17 @@
 <?php
-$mirror = "www.youtube.com";		// Change this value to the site you want to mirror.
+$domain = $_SERVER['SERVER_NAME'];
+$mirror = "www.google.com";
+switch ($domain)
+{
+case "www.a.cn":
+  $mirror = "www.az.cn";
+  break;
+case "www.b.com.cn":
+  $mirror = "www.bz.com";
+  break;
+default:
+  $mirror = "www.google.com";
+}
 
 $req = $_SERVER['REQUEST_METHOD'] . ' ' . $_SERVER['REQUEST_URI'] . " HTTP/1.0\r\n";
 $length = 0;
